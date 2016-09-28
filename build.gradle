@@ -12,4 +12,13 @@ dependencies {
     testCompile 'org.testng:testng:6.9.10'
 }
 
+task sourcesJar(type: Jar) {
+    classifier = "sources"
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 test.useTestNG()
