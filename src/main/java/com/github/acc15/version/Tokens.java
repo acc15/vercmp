@@ -16,10 +16,6 @@ public class Tokens {
             this.priority = priority;
         }
 
-        public int getPriority() {
-            return priority;
-        }
-
         public abstract boolean matches(String str);
 
         public int compare(String o1, String o2) {
@@ -81,7 +77,7 @@ public class Tokens {
     private static int findMatcher(String str, TokenMatcher[] matchers) {
         int found = -1;
         for (int i = 0; i < matchers.length; i++) {
-            if (matchers[i].matches(str) && (found < 0 || matchers[found].getPriority() < matchers[i].getPriority())) {
+            if (matchers[i].matches(str) && (found < 0 || matchers[found].priority < matchers[i].priority)) {
                 found = i;
             }
         }
