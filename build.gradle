@@ -1,0 +1,15 @@
+plugins {
+    id 'net.researchgate.release' version '2.4.0'
+}
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:6.9.10'
+}
+
+test.useTestNG()
