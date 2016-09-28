@@ -16,7 +16,6 @@ public class VersionComparatorTest {
 
         List<String> versions = Arrays.asList(
             "5.0.43.21",
-            "5.0.43.21-SNAPSHOT",
             "5.0.32.34",
             "5.0.32-alpha.34",
             "6.42b7-rc",
@@ -25,6 +24,7 @@ public class VersionComparatorTest {
             "5.0.32-1.34",
             "6.42",
             "6.42b10",
+            "5.0.43.21-SNAPSHOT",
             "6.42b7",
             "6.42b",
             "1.00-rc2",
