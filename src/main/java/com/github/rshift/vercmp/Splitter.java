@@ -1,4 +1,4 @@
-package com.github.acc15.version;
+package com.github.rshift.vercmp;
 
 public interface Splitter {
 

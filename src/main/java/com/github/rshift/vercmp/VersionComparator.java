@@ -1,9 +1,6 @@
-package com.github.acc15.version;
+package com.github.rshift.vercmp;
 
 import java.util.Comparator;
-
-import static com.github.acc15.version.Splitters.*;
-import static com.github.acc15.version.Tokens.*;
 
 public class VersionComparator implements Comparator<String> {
 
@@ -60,9 +57,9 @@ public class VersionComparator implements Comparator<String> {
 
     public static VersionComparator createDefault() {
         return new VersionComparator(
-            splitBy(pattern("\\.")).orderBy(empty(), other(), numeric()),
-            splitBy(pattern("\\-")).orderBy(other(), empty(), numeric()),
-            splitBy(digits()).orderBy(empty(), other(), numeric())
+            splitBy(Splitters.pattern("\\.")).orderBy(Tokens.empty(), Tokens.other(), Tokens.numeric()),
+            splitBy(Splitters.pattern("\\-")).orderBy(Tokens.other(), Tokens.empty(), Tokens.numeric()),
+            splitBy(Splitters.digits()).orderBy(Tokens.empty(), Tokens.other(), Tokens.numeric())
         );
     }
 

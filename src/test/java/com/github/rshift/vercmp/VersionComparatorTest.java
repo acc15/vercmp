@@ -1,4 +1,4 @@
-package com.github.acc15.version;
+package com.github.rshift.vercmp;
 
 import org.testng.annotations.Test;
 
