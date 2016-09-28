@@ -60,7 +60,7 @@ public class VersionComparator implements Comparator<String> {
 
     public static VersionComparator createDefault() {
         return new VersionComparator(
-            splitBy(pattern("\\.")).orderBy(other(), numeric(), empty()),
+            splitBy(pattern("\\.")).orderBy(empty(), other(), numeric()),
             splitBy(pattern("\\-")).orderBy(other(), empty(), numeric()),
             splitBy(digits()).orderBy(empty(), other(), numeric())
         );

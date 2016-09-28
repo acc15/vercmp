@@ -23,6 +23,7 @@ public class VersionComparatorTest {
             "5.0.32-rc.34",
             "5.0.32-1.34",
             "6.42",
+            "4.1",
             "6.42b10",
             "5.0.43.21-SNAPSHOT",
             "6.42b7",
@@ -31,6 +32,7 @@ public class VersionComparatorTest {
             "1.00",
             "1.00-rc1",
             "6.42b7-rc2",
+            "4.1.1",
             "1.00-rc");
 
         versions.sort(cmp);
@@ -40,6 +42,8 @@ public class VersionComparatorTest {
             "1.00-rc1",
             "1.00-rc2",
             "1.00",
+            "4.1",
+            "4.1.1",
             "5.0.32-alpha.34",
             "5.0.32-beta.34",
             "5.0.32-rc.34",
