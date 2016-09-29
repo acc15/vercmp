@@ -48,6 +48,20 @@ to
     6.42b7
     6.42b19
 
-Usage:
+## Usage
+
+Example:
     
     VersionComparator.createDefault().compare(v1, v2)
+    
+#### Maven
+
+    <dependency>
+        <groupId>com.github.rshift</groupId>
+        <artifactId>vercmp</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+#### Gradle
+    
+    compile("com.github.rshift:vercmp:1.0.0")

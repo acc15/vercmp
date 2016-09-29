@@ -11,6 +11,8 @@ repositories {
 }
 
 dependencies {
+    compile("com.github.rshift:vercmp:1.0.0")
+
     testCompile 'org.testng:testng:6.9.10'
 }
 
