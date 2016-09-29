@@ -34,6 +34,10 @@ signing {
     sign configurations.archives
 }
 
+signArchives.onlyIf {
+    gradle.taskGraph.hasTask("uploadArchives")
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
