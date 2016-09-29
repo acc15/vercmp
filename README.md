@@ -1,5 +1,7 @@
 # VersionComparator
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp)
+
 Comparator for application versions.
 
 Default comparator works with almost any versioning scheme out-of-box.
