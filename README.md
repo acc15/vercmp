@@ -1,7 +1,7 @@
 # VersionComparator
 
 [![Build Status](https://travis-ci.org/rshift/vercmp.svg?branch=master)](https://travis-ci.org/rshift/vercmp)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.rshift/vercmp)
 
 Comparator for application versions.
 
