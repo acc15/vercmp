@@ -35,56 +35,48 @@ signing {
 }
 
 signArchives.onlyIf {
-    gradle.taskGraph.hasTask("uploadArchives")
+    gradle.taskGraph.hasTask(":uploadArchives")
 }
 
 uploadArchives {
     repositories {
-        mavenDeployer {
-
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-
-                name project.name
-                packaging "jar"
-
-                description "Comparator for application versions"
-                url "https://github.com/rshift/vercmp"
-
-                scm {
-                    connection "scm:git:https://github.com/rshift/vercmp.git"
-                    developerConnection "scm:git:https://github.com/rshift/vercmp.git"
+        if (project.hasProperty("ossrhUsername") && project.hasProperty("ossrhPassword")) {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+                pom.project {
+                    name project.name
+                    packaging "jar"
+                    description "Comparator for application versions"
                     url "https://github.com/rshift/vercmp"
-                }
-
-                licenses {
-                    license {
-                        name "MIT License"
-                        url "https://opensource.org/licenses/MIT"
+                    scm {
+                        connection "scm:git:https://github.com/rshift/vercmp.git"
+                        developerConnection "scm:git:https://github.com/rshift/vercmp.git"
+                        url "https://github.com/rshift/vercmp"
                     }
-                }
-
-                developers {
-                    developer {
-                        id 'rshift'
-                        name 'Vyacheslav Mayorov'
-                        email 'utvk@ya.ru'
+                    licenses {
+                        license {
+                            name "MIT License"
+                            url "https://opensource.org/licenses/MIT"
+                        }
+                    }
+                    developers {
+                        developer {
+                            id 'rshift'
+                            name 'Vyacheslav Mayorov'
+                            email 'utvk@ya.ru'
+                        }
                     }
                 }
             }
-        }
+    	}
     }
 }
-
 afterReleaseBuild.dependsOn uploadArchives
 
 
